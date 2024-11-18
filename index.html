@@ -1,0 +1,747 @@
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+<meta charset="utf-8">
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        width: 100%;
+        border: 0;
+        display: block;
+    }
+
+    article,
+    main,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        margin: 0;
+        background-color: #ffeacf !important;
+        font-size: 14px;
+    }
+
+    .sp--1260,
+    .layout--main {
+        position: relative;
+        z-index: 0;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sp--1260.icon_Home,
+    .sp--1260.gameicon {
+        z-index: auto;
+    }
+
+    /* 主視覺 */
+    /* ======================================== */
+
+    .logo a,
+    .sp__visual a {
+        display: block;
+    }
+
+    .sp--1260 .logo {
+        position: absolute;
+        z-index: 1;
+        /* 調整logo位置 */
+        top: 0%;
+        left: 0%;
+        width: 30%;
+        max-width: 220px;
+    }
+
+    /* 設定背景 */
+
+    .sp__main {
+        background: url(bg.jpg) center 0 no-repeat;
+    }
+
+    /* 設定前景 */
+
+    .sp__visual {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    .visual__anchor,
+    .visual__main,
+    .visual__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .visual__anchor {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+    }
+
+    .visual__main a,
+    .visual__nav a {
+        flex-grow: 1;
+    }
+
+    /* 主視覺 */
+
+    .visual__main {
+        height: 100%;
+    }
+
+    .visual__main a:nth-child(1) {
+        flex-grow: 0;
+        width: 100%;
+        height: 78%;
+    }
+
+    .visual__main a:nth-child(2) {
+        flex-grow: 0;
+        width: 100%;
+        height: 22%;
+    }
+
+    /* note */
+    /* ======================================== */
+
+    .note {
+        word-break: break-all;
+    }
+
+    .note article {
+        background-color: #fff;
+        font: normal 1rem/1.5 '微軟正黑體', Arial;
+        color: #000000;
+        border-radius: 20px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2%;
+    }
+
+    .note article a {
+        display: inline;
+        color: #036eb6;
+    }
+
+    .note article a:visited {
+        color: #601986;
+    }
+
+    .note article a:hover {
+        color: #fd2491;
+        text-decoration: underline;
+    }
+
+    .note hr {
+        background-color: #000000;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 15px;
+        height: 8px;
+        border: 0;
+    }
+
+    .note h2 {
+        line-height: 2.2;
+        padding: 0;
+        background-color: #be0101;
+        border-radius: 10px;
+        display: block;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 2%;
+    }
+
+    @media screen and (max-width: 960px) {
+        .note h2 {
+            font-size: 19px;
+        }
+    }
+
+    .note p,
+    .note h3 {
+        line-height: 1.5;
+        padding: 0 5%;
+        margin: 0;
+    }
+
+    .note h3 {
+        font-size: 1rem;
+        color: #8d5014;
+    }
+
+    .note ol,
+    .note ul {
+        padding: 0;
+        margin: auto;
+        margin: 0 5% 0.25em 7%;
+        list-style: decimal;
+    }
+
+    .note li {
+        margin-bottom: 0.25em;
+    }
+
+    .note li>ol,
+    .note li>ul {
+        margin-left: 1.5em;
+    }
+
+    .note li>ol {
+        list-style: lower-alpha;
+    }
+
+    .note ul {
+        list-style: disc;
+    }
+
+    .note ul.list--custsom,
+    .note ol.list--custsom {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    /* table */
+
+    .note table {
+        color: #331000;
+        border: 1px solid #331000;
+        border-right: 0;
+        border-bottom: 0;
+        width: 90%;
+        margin: 1% 0 2% 5.5%;
+        background-color: #fff;
+        font-size: 1em;
+    }
+
+    .note table td {
+        border-right: 1px solid #331000;
+        border-bottom: 1px solid #331000;
+        padding: 5px;
+        text-align: center;
+    }
+
+    .note table tr:first-child td,
+    .note ol table tr:first-child td {
+        background-color: #ffbfd1;
+        color: #331000;
+    }
+
+    .note ol table {
+        margin: 0;
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        .note ol,
+        .note ul {
+            margin: 0 3.5% 0 7%;
+        }
+
+        .note table {
+            margin: 0 3%;
+            width: 100%;
+        }
+    }
+
+    /*  動畫  */
+
+    .animate__wrap {
+        position: relative;
+        z-index: 1;
+    }
+
+    /*-- 手機版 --*/
+    .animate__wrap .animate__obj--01 {
+        position: absolute;
+        top: 6vw;
+        left: 10%;
+        width: 80%;
+        pointer-events: none;
+        animation: light ease-in-out infinite 2.5s;
+        z-index: 1;
+    }
+
+
+
+
+    /*-- 電腦版 --*/
+    @media screen and (min-width: 960px) {
+        .animate__wrap .animate__obj--01 {
+            top: 50px;
+            left: calc(50% - 365px);
+            width: auto;
+            animation: light ease-in-out infinite 2.5s;
+        }
+    }
+
+
+
+
+
+    /*  fixed bar  */
+
+    .fixedbar__wrap {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        top: 120px;
+    }
+
+    .fixedbar__wrap .fixedbar {
+        position: -webkit-sticky;
+        position: sticky;
+        height: auto;
+        top: 0.5%;
+        width: 100%;
+        margin-left: 0vw;
+        margin-top: 90vw;
+    }
+
+    @media screen and (min-width: 960px) {
+        .fixedbar__wrap .fixedbar {
+            margin-top: 1035px;
+            margin-left: calc(50% - 480px);
+            width: auto;
+        }
+    }
+
+    .link {
+        width: 100%;
+        height: 227px;
+        /* -- 測試位置 -- */
+        /* background-color: #000000; */
+        z-index: 50;
+        position: absolute;
+        margin: auto;
+        /* --上面切片多高就設多高-- */
+        top: 469px;
+    }
+
+    /* 花瓣 步驟1 加CSS */
+
+    .fall__something {
+        position: absolute;
+        /* 預設為第一屏的全視窗，可自行調整位置 */
+        top: 0;
+        left: 0;
+        /* 預設為第一屏的全視窗，可自行調整大小 */
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        z-index: 100;
+        pointer-events: none;
+    }
+
+    /*-- 電腦版 --*/
+
+    @media screen and (min-width: 960px) {
+        .fall__something {
+            /* 預設為第一屏的全視窗，可自行調整位置 */
+            top: 0;
+            left: 0;
+            /* 預設為第一屏的全視窗，可自行調整大小 */
+            width: 100%;
+            height: 650px;
+        }
+    }
+
+    .sp__wallper {
+        overflow: hidden;
+    }
+
+    /* --- 背景飄落 start --- */
+    .bg-container {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        pointer-events: none;
+
+        background-size: auto;
+    }
+
+    .bg-container>div {
+        display: block;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0
+    }
+
+    .bg-container .first-layer {
+        background: url(bg-animate-1.png) center 0;
+        opacity: 0.8;
+    }
+
+
+    .bg-container .bg--first {
+        animation: falling-down linear infinite;
+        /* animation-duration調整飄落下來的時間 */
+        animation-duration: 12s
+    }
+
+
+    @keyframes falling-down {
+        0% {
+            background-position: 0 0;
+            opacity: 0
+        }
+
+        10%,
+        90% {
+            opacity: 1
+        }
+
+        100% {
+            background-position: 100% 150vh;
+            opacity: 0
+        }
+    }
+
+    @keyframes falling-down-2 {
+        0% {
+            transform: translate3d(0, -100%, 0)
+        }
+
+        to {
+            /* translate3d(x, y, z)調整飄落下來的位置 */
+            transform: translate3d(15%, 100%, 0)
+        }
+    }
+
+    @keyframes falling-down-3 {
+        0% {
+            transform: translate3d(0, -100%, 0)
+        }
+
+        50% {
+            transform: translate3d(-10%, 0, 0)
+        }
+
+        to {
+            transform: translate3d(15%, 100%, 0)
+        }
+    }
+
+    @keyframes light {
+        0% {
+            filter: brightness(100%);
+            transform: scale(1);
+        }
+
+        5% {
+            filter: brightness(120%);
+        }
+
+        10% {
+            filter: brightness(100%);
+        }
+
+        15% {
+            filter: brightness(120%);
+        }
+
+        20% {
+            filter: brightness(100%);
+        }
+
+        50% {
+            filter: brightness(100%);
+            transform: scale(1.04);
+        }
+
+        55% {
+            filter: brightness(120%);
+        }
+
+        80% {
+            filter: brightness(120%);
+        }
+
+        to {
+            filter: brightness(100%);
+            transform: scale(1);
+        }
+    }
+
+    /* --- 背景飄落 end --- */
+</style>
+
+
+
+
+
+
+
+
+<div id="spWrap" class="sp__wallper">
+    <!-- -- 副標下錨點 -- -->
+    <!-- <a class="link" href="https://www.etmall.com.tw"></a> -->
+    <!-- 主視覺 -->
+
+
+    
+
+
+    <div class="animate__wrap">
+        <!-- 如果有多組物件，可以複製命名animate__obj--0{數字} css 也複製一份就可以一直往下生 -->
+        <img class="animate__obj--01 animate__animated animate__fadeInDown" src="t.png">
+
+
+    </div>
+
+
+
+    <!-- fixedbar start -->
+    <div class="fixedbar__wrap">
+        <a href="#"><img id="changeBar" class="fixedbar" src="but_game.png"></a>
+    </div>
+    <!-- fixedbar end -->
+
+    <main class="sp__main">
+        <div class="sp--1260">
+            <a href="https://www.etmall.com.tw" class="logo"><img src="ehs-logo-w.png" alt="東森購物"></a>
+            <div class="sp__visual">
+                <img src="sp_01.jpg">
+            </div>
+        </div>
+    </main>
+</div>
+<section class="layout--main note" name="note" id="note">
+    <article>
+        <h2>【活動說明】</h2>
+        <ol>
+            <li>活動期間 : 2024/12/01(日)上午10:00-2024/12/31(二)下午23:59</li>
+            <li>活動說明：
+                <ol class="disc-type">
+                    <li>活動期間於東森購物網兌換專區完成<span
+                            class="txt_underline">1件【幣加金】商品</span>(以東森幣+現金購買商品)，且無取消訂單或退貨，即獲得一次抽獎機會，累積買滿3件再多一次抽獎機會，購買數量越多，中獎機率越高。
+                    </li>
+                    <li>抽獎日期：2025/1/22。</li>
+                    <li>得獎公佈日期：中獎名單將於2025/1/26公布於兌換專區活動頁，並由東森購物網通知中獎者。(依稅法規定，若中獎對象於東森購物網兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,001元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報。)；若中獎對象於東森購物網兌換贈（獎）品金額達20,001元以上，依稅法規定，得獎人須依法規定繳納與所得獎品價值之10%之稅金，外籍人士為20%；將於次年初開立扣繳憑單予得獎人並向主管稽徵機關申報。
+                    </li>
+                </ol>
+            </li>
+            <li>獎項內容如下：
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>中獎名額</td>
+                        <td>獎項</td>
+                        <td>售價</td>
+                    </tr>
+                    <tr>
+                        <td>3名</td>
+                        <td>森美妍-複方精油組</td>
+                        <td>8,240元</td>
+                    </tr>
+                    <tr>
+                        <td>7名</td>
+                        <td>森美妍–保濕洗卸組</td>
+                        <td>3,910元</td>
+                    </tr>
+                    <tr>
+                        <td>10名</td>
+                        <td>東森倍護膠囊(60錠)X1盒</td>
+                        <td>3,809元</td>
+                    </tr>
+                    <tr>
+                        <td>10名</td>
+                        <td>Vogue25週年與森美妍聯名-帆布袋</td>
+                        <td>790元</td>
+                    </tr>
+
+                </table>
+            </li>
+            <li>範例說明：
+                <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>舉例</td>
+                        <td>支付方式</td>
+                        <td>購買日期</td>
+                        <td>購買件數</td>
+                        <td>抽獎機會</td>
+                    </tr>
+                    <tr>
+                        <td>小東</td>
+                        <td>東森幣＋現金</td>
+                        <td>12/01~12/25</td>
+                        <td>6</td>
+                        <td>3+3個中獎機會</td>
+                    </tr>
+                    <tr>
+                        <td>小森</td>
+                        <td>東森幣＋現金</td>
+                        <td>12/05</td>
+                        <td>2</td>
+                        <td>1+1個中獎機會</td>
+                    </tr>
+                    <tr>
+                        <td>阿購</td>
+                        <td>東森幣</td>
+                        <td>12/28</td>
+                        <td>0</td>
+                        <td>1中獎機會</td>
+                    </tr>
+                </table>
+            </li>
+        </ol>
+
+
+        <h3>注意事項</h3>
+        <ol>
+            <li>本活動限於活動期間內在兌換專區中購買幣加金商品者參加。</li>
+            <li>幣加金商品定義：僅限東森購物網兌換專區以現金加東森幣進行購買的商品。</li>
+            <li>東森幣全額折抵商品不在此次抽獎資格認列。</li>
+            <li>依稅法規定，若中獎對象於東森購物網兌換贈（獎）品金額達新台幣（下同）1,001元以上未達20,010元，將於次年初開立免扣繳憑單予得獎人並向主管稽徵機關申報；若中獎對象於東森購物網兌換贈（獎）品金額達20,010元以上，依稅法規定，得獎人須依法規定繳納與所得獎品價值之10%之稅金，外籍人士為20%；將於次年初開立扣繳憑單予得獎人並向主管稽徵機關申報。</li>
+            <li>中獎會員，應配合東森購物網指示完成獎項領取。若東森購物網無法聯絡得獎人、無法寄送獎品予得獎人或得獎人提供不實之資料，視為得獎人放棄得獎資格，得獎人不得異議。</li>
+            <li>贈品以實物為準，圖片僅供參考。中獎者不得指定顏色、型號，贈品隨機出貨，不得轉讓，亦不能要求更換獎項或折換現金。贈品價值以贈品市價為準。</li>
+            <li>如原定獎項因缺貨等不可抗拒之因素無法提供，將由主辦單位另以同等值之贈品取代之。如有任何變更內容或詳細注意事項將公佈於活動說明頁，恕不另行通知。</li>
+            <li>若經東森購物網比對得獎人之訂單資料有嗣後取消交易、棄標之情況，東森購物網將取消得獎人資格，得獎人不得異議。</li>
+            <li>兌獎資格或獎品均不得要求轉讓他人、折合現金或更換其他等值獎品;獎項說明未盡事宜，依中獎通知說明為主。</li>
+            <li>東森購物網保有活動解釋、變更、修改或終止本活動之權利。</li>
+        </ol>
+    </article>
+</section>
+
+
+<script src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script>
+    $('a[href^="#"]').on('click', function (e) {
+        var target = $('a[name=' + this.getAttribute('href').split('#')[1] + ']');
+        if (target.length) {
+            e.preventDefault();
+            $('html,body').stop().animate({
+                scrollTop: target.offset().top
+            }, 500);
+        }
+    });
+</script>
+<!-- 浮水印 -->
+<script id="scriptIconFloat"
+    src="https://www.etmall.com.tw/XML/content/DMSetting/Final/209901/SP_1105264/float-icon.js"></script>
+<script src="https://media.etmall.com.tw/sp/12500/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<!-- 共用JS -->
+<link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.3.css">
+<!-- --花瓣 步驟3-- -->
+<script type="text/javascript" src="https://www.etmall.com.tw/Scripts/lib/jquery/jquery-2.2.0.min.js"></script>
+<script src="jquery-fallSomething.js"></script>
+<script src="effects-fallSomething.js"></script>
+<!-- fixedbar -->
+<script>
+    // button 定位
+    function stickyButton() {
+        var winWt = document.body.offsetWidth;
+        var winHt = document.body.clientHeight;
+        var navTop = document.getElementById('animateWrapHt');
+        var changeBarFixed = document.getElementById('changeBar');
+        //        navTop.style.height = winHt;
+        //        navTop.setAttribute("style","+'height:'+ winHt'")
+        // tips: 加單位判斷會錯
+        var scrollTop = window.scrollY;
+        var scrollTop_m = window.scrollY * 100 / winWt;
+
+        if (winWt <= 960 && scrollTop_m >= 76.5) {
+            changeBarFixed.style.position = "fixed";
+            changeBarFixed.style.marginTop = "0";
+        } else if (winWt > 960 && scrollTop >= 735) {
+            changeBarFixed.style.position = "fixed";
+            changeBarFixed.style.marginTop = "0";
+        } else if (scrollTop_m < 76.5 || scrollTop < 735) {
+            changeBarFixed.style.position = "";
+            changeBarFixed.style.marginTop = "";
+        }
+    }
+    window.addEventListener('load', stickyButton);
+    window.addEventListener('resize', stickyButton);
+
+    $.debounce = function (func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this,
+                args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+    $.throttle = function (func, wait) {
+        var context, args, timeout, throttling, more, result;
+        var whenDone = $.debounce(function () {
+            more = throttling = false;
+        }, wait);
+        return function () {
+            context = this, args = arguments;
+            var later = function () {
+                timeout = null;
+                if (more) func.apply(context, args);
+                whenDone();
+            };
+            if (!timeout) timeout = setTimeout(later, wait);
+
+            if (throttling) {
+                more = true;
+            } else {
+                result = func.apply(context, args);
+            };
+            whenDone();
+            throttling = true;
+            return result;
+        };
+    };
+    var bind__handler = $.throttle(function (e) {
+        stickyButton();
+    }, 200);
+    window.addEventListener('scroll', bind__handler);
+
+    // 判斷
+    var isUiWebview = /(WebView|(iPhone|iPod|iPad)(?!.*Safari\/)(?!.*Line\/)|Android.*(wv|.0.0.0))(?!.*Line\/)/gi.test(navigator.userAgent);
+    var changeBar = document.getElementById('changeBar');
+    // is app
+    if (isUiWebview) {
+        changeBar.setAttribute("src", "but_game.png");
+    }
+    // not app
+    else {
+        changeBar.setAttribute("src", "but_game2.png");
+    }
+</script>
